@@ -1,10 +1,17 @@
-// vite.config.js
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig({
-  base: "/johnkaptain-humanizer/",   // <-- repo name here
+  // Your repo is: JhnKaptain/johnkaptain-humanizer
+  // So the site is served at /johnkaptain-humanizer/
+  base: "/johnkaptain-humanizer/",
   plugins: [react()],
-  build: { outDir: "dist", sourcemap: false },
-  server: { port: 5173, open: true },
+  build: {
+    outDir: "dist",
+    sourcemap: false,
+  },
+  server: {
+    port: 5173,
+    open: true,
+  },
 });
