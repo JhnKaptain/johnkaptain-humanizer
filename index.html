@@ -2,21 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>JohnKaptain</title>
-    <meta
-      name="description"
-      content="Rewrite AI-sounding text into natural, human-like prose."
-    />
-    <!-- ✅ favicon path fixed for GitHub Pages -->
+    <meta name="description" content="Rewrite AI-sounding text into natural, human-like prose." />
+    <!-- keep favicon relative -->
     <link rel="icon" type="image/svg+xml" href="./vite.svg" />
   </head>
   <body>
     <div id="root"></div>
-    <!-- ✅ entry point stays relative -->
+    <!-- keep entry relative; Vite will rewrite this to the built JS in /dist -->
     <script type="module" src="./src/main.jsx"></script>
   </body>
 </html>

@@ -1,10 +1,9 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
+// Use relative paths so the site works from any subfolder (GitHub Pages-friendly)
 export default defineConfig({
-  // Your repo is: JhnKaptain/johnkaptain-humanizer
-  // So the site is served at /johnkaptain-humanizer/
-  base: "/johnkaptain-humanizer/",
+  base: "./",
   plugins: [react()],
   build: {
     outDir: "dist",
