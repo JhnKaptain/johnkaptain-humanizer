@@ -1,71 +1,107 @@
+/* Base layout */
 body {
+  margin: 0;
   background: var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Container (if you wrap in App.jsx) */
+.container {
+  max-width: 980px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+/* Card */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+
+/* Headings */
+h1, h2, h3 {
+  margin: 0 0 8px 0;
   color: var(--text);
 }
 
-.page {
-  max-width: var(--container, 900px);
-  margin: 0 auto;
-  padding: 16px;
-}
-
-.site-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 0;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.brand { font-weight: 800; font-size: 22px; letter-spacing: .2px; }
-.chip  { font-size: 12px; padding: 4px 8px; border-radius: 999px; background: var(--primary, #4f46e5); color: #fff; }
-
-.main { margin-top: 20px; }
-.lede { color: var(--muted, #6b7280); margin-bottom: 16px; }
-
-.card {
-  background: var(--surface, #fff);
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,.08);
-  padding: 16px;
-  margin-bottom: 16px;
-}
-
+/* Textareas (input + output) */
 .text-area {
   width: 100%;
-  min-height: 180px;
+  min-height: 160px;
+  padding: 12px 14px;
   border-radius: 12px;
-  border: 1px solid #d1d5db;
-  background: #fff;
-  color: var(--text, #111827);
-  padding: 10px;
-  resize: vertical;
-  margin-top: 8px;
-}
-.text-area:focus {
+  border: 1px solid var(--border);
+  background: var(--surface); /* key for dark mode contrast */
+  color: var(--text);
   outline: none;
-  border-color: var(--primary, #4f46e5);
-  box-shadow: 0 0 0 3px rgba(79,70,229,.2);
+  resize: vertical;
+  box-sizing: border-box;
 }
 
+.text-area::placeholder {
+  color: var(--muted);
+}
+
+/* Buttons */
 button {
-  background: var(--primary, #4f46e5);
-  color: white;
-  border: none;
+  appearance: none;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  padding: 10px 14px;
   border-radius: 12px;
-  padding: 10px 16px;
-  margin-top: 12px;
   cursor: pointer;
   font-weight: 600;
-  transition: background .2s ease;
+  transition: transform 0.04s ease, background 0.2s ease, border-color 0.2s ease;
 }
-button:hover { background: var(--primary-hover, #4338ca); }
 
-.site-footer {
-  text-align: center;
-  font-size: 12px;
-  color: var(--muted, #6b7280);
-  margin-top: 40px;
-  padding-top: 20px;
-  border-top: 1px solid #e5e7eb;
+button:hover {
+  transform: translateY(-1px);
+  border-color: var(--accent);
 }
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Accent style (optional) */
+button.primary {
+  background: var(--accent);
+  color: var(--accent-contrast);
+  border-color: transparent;
+}
+
+button.primary:hover {
+  filter: brightness(1.05);
+}
+
+/* Chips / badges */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--chip-bg);
+  color: var(--text);
+  font-size: 13px;
+  border: 1px solid var(--border);
+}
+
+/* Range slider */
+input[type="range"] {
+  width: 100%;
+}
+
+/* Small spacing utils */
+.mt-8 { margin-top: 8px; }
+.mt-12 { margin-top: 12px; }
+.mt-16 { margin-top: 16px; }
