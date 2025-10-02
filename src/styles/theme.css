@@ -1,0 +1,25 @@
+:root {
+  --bg: #f9fafb;
+  --surface: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+
+  --radius: 12px;
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+
+  --container: 900px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111827;
+    --surface: #1f2937;
+    --text: #f3f4f6;
+    --muted: #9ca3af;
+    --primary: #8b8cf3;
+    --primary-hover: #6366f1;
+  }
+}
